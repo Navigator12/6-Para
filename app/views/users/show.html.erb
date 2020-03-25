@@ -1,0 +1,13 @@
+<div>
+  <h3><%= @user.name %> <%= @user.surname %></h3>
+  <h4>Age: <%= @user.age %></h4>
+  <%= image_tag(@user.image_path) %>
+</div>
+
+<div style="margin-top: 10em">
+  <% @users.each do |user| %>
+    <div>
+      <p><%= link_to user.name, user_path(user) %></p>
+    </div>
+  <% end %>
+</div>
