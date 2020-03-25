@@ -3,7 +3,10 @@
 class UsersController < ApplicationController
   before_action :set_user!
 
-  def show; end
+  def show
+    @users = User.all
+    @user = (User.find(params[:id]) if params[:id]) || current_user
+  end
 
   private
 

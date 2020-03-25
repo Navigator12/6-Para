@@ -5,7 +5,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#"><%= current_user.username %></a>
+          <%= link_to current_user.username, root_path, class: 'nav-link' %>
         </li>
         <li class="nav-item active custom-item">
           <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
