@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :set_user!
 
   def show
-    @users = User.all
+    @users = User.where.not(id: current_user.id)
     @user = (User.find(params[:id]) if params[:id]) || current_user
   end
 
