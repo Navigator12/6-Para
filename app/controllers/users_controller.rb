@@ -4,8 +4,9 @@ class UsersController < ApplicationController
   before_action :set_user!
 
   def show
-    @users = User.where.not(id: current_user.id)
-    @user = (User.find(params[:id]) if params[:id]) || current_user
+    @users = User.where.not(id: current_user.id)#.includes(:posts)
+    @user = (User.preload(:posts).find(params[:id]) if params[:id]) || current_user
+    @on_my_page = @user.id == current_user.id
   end
 
   private

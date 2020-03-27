@@ -1,0 +1,9 @@
+<%= form_for([@user, @user.posts.build]) do |f| %>
+  <h3>Add some post</h3>
+  <div class="form-grid">
+    <%= f.text_area :description,
+                    required: true,
+                    autofocus: true %>
+    <%= f.submit('Create post', class: 'btn btn-primary') %>
+  </div>
+<% end %>

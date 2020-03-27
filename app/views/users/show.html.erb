@@ -4,10 +4,27 @@
   <%= image_tag(@user.image_path) %>
 </div>
 
-<div style="margin-top: 10em">
-  <% @users.each do |user| %>
-    <div>
-      <p><%= link_to user.name, user_path(user) %></p>
-    </div>
+<% if @on_my_page %>
+  <%= render partial: 'shared/new_post' %>
+<% end %>
+
+<div>
+  <% if @user.posts.size.zero? %>
+    <p>No posts yet</p>
+  <% else %>
+    <% @user.posts.distinct.each do |post| %>
+      <div class="post-grid">
+        <p><%= post.description %></p>
+        <p><%= post.created_at.strftime("%H:%M %d.%m.%Y") %></p>
+      </div>
+    <% end %>
   <% end %>
 </div>
+
+<!--<div style="margin-top: 10em">-->
+  <%# @users.each do |user| %>
+<!--    <div>-->
+<!--      <p><%#= link_to user.name, user_path(user) %></p>-->
+<!--    </div>-->
+  <%# end %>
+<!--</div>-->
