@@ -8,3 +8,15 @@ body {
   position: absolute;
   right: 2em;
 }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 5fr 1fr 3fr;
+  grid-column-gap: 15px;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: 5fr 2fr 2fr;
+  grid-column-gap: 15px;
+}
