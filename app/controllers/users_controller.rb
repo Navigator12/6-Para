@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     @on_my_page = @user.id == current_user.id
   end
 
+  def index
+    @users = User.all.shuffle
+  end
+
   private
 
   def set_user!
