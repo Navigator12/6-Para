@@ -21,10 +21,17 @@
   <% end %>
 </div>
 
-<!--<div style="margin-top: 10em">-->
-  <%# @users.each do |user| %>
-<!--    <div>-->
-<!--      <p><%#= link_to user.name, user_path(user) %></p>-->
-<!--    </div>-->
-  <%# end %>
-<!--</div>-->
+<div>
+  <% render partial: 'shared/stats' %>
+  <%= @user.following.count %>
+  <%= @user.followers.count %>
+</div>
+<%= render 'shared/follow_form' unless @on_my_page %>
+
+<div style="margin-top: 10em">
+  <% @users.each do |user| %>
+    <div>
+      <p><%= link_to user.name, user_path(user) %></p>
+    </div>
+  <% end %>
+</div>
