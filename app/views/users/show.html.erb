@@ -4,8 +4,16 @@
   <%= image_tag(@user.image_path) %>
 </div>
 
+<div>
+  <% render partial: 'shared/stats' %>
+  <p id="followings"><%= @user.following.count %> followings</p>
+  <p id="followers"><%= @user.followers.count %> followers</p>
+</div>
+
 <% if @on_my_page %>
   <%= render partial: 'shared/new_post' %>
+<% else %>
+  <%= render 'shared/follow_form' unless @on_my_page %>
 <% end %>
 
 <div>
@@ -20,13 +28,6 @@
     <% end %>
   <% end %>
 </div>
-
-<div>
-  <% render partial: 'shared/stats' %>
-  <%= @user.following.count %>
-  <%= @user.followers.count %>
-</div>
-<%= render 'shared/follow_form' unless @on_my_page %>
 
 <div style="margin-top: 10em">
   <% @users.each do |user| %>
