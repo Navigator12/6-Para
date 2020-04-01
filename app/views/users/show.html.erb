@@ -1,11 +1,17 @@
 <div>
   <h3><%= @user.name %> <%= @user.surname %></h3>
   <h4>Age: <%= @user.age %></h4>
-  <%= image_tag(@user.image_path) %>
+  <%= image_tag(@user.image_path, {class: "style__image"})%>
+</div>
+
+<div>
+  <%= render partial: 'shared/stats' %>
 </div>
 
 <% if @on_my_page %>
   <%= render partial: 'shared/new_post' %>
+<% else %>
+  <%= render 'shared/follow_form' unless @on_my_page %>
 <% end %>
 
 <div>
@@ -21,10 +27,4 @@
   <% end %>
 </div>
 
-<!--<div style="margin-top: 10em">-->
-  <%# @users.each do |user| %>
-<!--    <div>-->
-<!--      <p><%#= link_to user.name, user_path(user) %></p>-->
-<!--    </div>-->
-  <%# end %>
-<!--</div>-->
+<%= render partial: 'shared/all_user_list' %>
