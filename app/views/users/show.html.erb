@@ -18,7 +18,7 @@
   <% if @user.posts.size.zero? %>
     <p>No posts yet</p>
   <% else %>
-    <% @user.posts.distinct.each do |post| %>
+    <% @user.posts.distinct.reverse_each do |post| %>
       <div class="post-grid">
         <p><%= post.description %></p>
         <p><%= post.created_at.strftime("%H:%M %d.%m.%Y") %></p>
@@ -26,5 +26,3 @@
     <% end %>
   <% end %>
 </div>
-
-<%= render partial: 'shared/all_user_list' %>
