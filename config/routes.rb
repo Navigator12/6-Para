@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  resources :relationships, only: [:create, :destroy]
+  resources :relationships, only: %i[create destroy]
 
+  resources :conversations do
+    resources :messages
+  end
 end

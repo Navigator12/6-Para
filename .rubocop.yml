@@ -1,0 +1,39 @@
+AllCops:
+  Exclude:
+    - "bin/*"
+
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+      - "**/*_spec.rb"
+      - "**/*_docs.rb"
+      - "db/*"
+      - "config/**/*"
+
+Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Exclude:
+    - "**/*_spec.rb"
+    - "**/*_docs.rb"
+
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"
+    - "**/*_docs.rb"
+    - "config/routes.rb"
+    - "db/*"
+    - "config/**/*"
+    - "lib/tasks/*"
+
+Metrics/MethodLength:
+  Exclude:
+    - "db/migrate/*"
+
+Metrics/AbcSize:
+  Exclude:
+    - "db/migrate/*"
