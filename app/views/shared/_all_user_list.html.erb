@@ -1,8 +1,7 @@
-<div>
-  <h3>All users list</h3>
+<ul class="list-group">
+  <li class="list-group-item active">All users list</li>
   <% @users.each do |user| %>
-    <div>
-      <p><%= link_to user.name, user_path(user) %></p>
-    </div>
+      <li class="list-group-item"><%= link_to user.name, user_path(user) %></li>
   <% end %>
-</div>
+</ul>
+
