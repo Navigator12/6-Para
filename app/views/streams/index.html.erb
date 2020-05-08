@@ -1,0 +1,7 @@
+<h1>All news </h1>
+<div>
+  <% @all_news.each do |news| %>
+    <h2><%= news.description %></h2>
+    <h3 class="p">Posted by  <small class="text-muted"><%= news.user.username %></small></h3>
+<% end %>
+</div>

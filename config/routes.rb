@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :relationships, only: %i[create destroy]
+  resources :streams, only: %[index]
 
   resources :conversations do
     resources :messages
