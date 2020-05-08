@@ -4,10 +4,9 @@
   </strong>
 
   <%= link_to 'following', params[:id] ? "#{params[:id]}/following" : "users/#{current_user.id}/following" %>
-  <br>
 
   <strong id="followers">
-    <%= @user.followers.count %>
+    &nbsp; &nbsp; &nbsp;<%= @user.followers.count %>
   </strong>
 
   <%= link_to 'followers', params[:id] ? "#{params[:id]}/followers" : "users/#{current_user.id}/followers" %>

@@ -3,7 +3,8 @@
   <div class="form-grid">
     <%= f.text_area :description,
                     required: true,
-                    autofocus: true %>
+                    autofocus: true,
+                    class: 'textarea__main' %>
     <%= f.submit('Create post', class: 'btn btn-primary') %>
   </div>
 <% end %>

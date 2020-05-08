@@ -18,15 +18,15 @@ body {
 
 .form-grid {
   display: grid;
-  grid-template-columns: 5fr 1fr 3fr;
+  grid-template-columns: 6fr 1fr;
   grid-column-gap: 15px;
 }
 
-.post-grid {
-  display: grid;
-  grid-template-columns: 5fr 2fr 2fr;
-  grid-column-gap: 15px;
-}
+//.post-grid {
+//  display: grid;
+//  grid-template-columns: 5fr 2fr 2fr;
+//  grid-column-gap: 15px;
+//}
 /* Main styles start */
 .main__section{
 
@@ -36,8 +36,12 @@ body {
 
 /* Image styles start */
 .style__image{
-  height: 250px;
-  width: 200px;
+  height: 200px;
+  width: 220px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  //width: 50%;
 }
 
 /* Image styles end */
@@ -94,3 +98,25 @@ li {
   opacity: .75;
 }
 /* footer styles end */
+
+/* follow styles start */
+.button__unfollow {
+  margin-left: 0;
+}
+/* follow styles end */
+
+.message__wrapper {
+  .section__message:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.send__message {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+}
+
+.button__message {
+  margin-left: 10px;
+  height: 60px;
+}
