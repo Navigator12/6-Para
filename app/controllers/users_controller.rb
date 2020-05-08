@@ -13,6 +13,14 @@ class UsersController < ApplicationController
     @users = User.all.shuffle
   end
 
+  def followers
+    @user = (User.find(params[:id]) if params[:id]) || current_user
+  end
+
+  def following
+    @user = (User.find(params[:id]) if params[:id]) || current_user
+  end
+
   private
 
   def set_user!

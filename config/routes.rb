@@ -9,8 +9,11 @@ Rails.application.routes.draw do
     resources :posts
   end
 
+  get 'users/:id/followers' => 'users#followers'
+  get 'users/:id/following' => 'users#following'
+
   resources :relationships, only: %i[create destroy]
-  resources :streams, only: %[index]
+  resources :streams, only: :index
 
   resources :conversations do
     resources :messages

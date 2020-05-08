@@ -1,0 +1,11 @@
+<ul class="list-group">
+  <% if @user.followers.size.eql?(0) %>
+    <li class="list-group-item active">No followers yet</li>
+  <% else %>
+    <li class="list-group-item active">All followers list</li>
+  <% end %>
+
+  <% @user.followers.each do |user| %>
+    <li class="list-group-item"><%= link_to user.name, user_path(user) %></li>
+  <% end %>
+</ul>
